@@ -2,7 +2,7 @@
     <string name="app_name">Pick Me</string>
     <string name="success">success</string>
     <string name="user_name">User Name</string>
-    <string name="last_name">Full Name</string>
+    <string name="last_name">Last Name</string>
     <string name="email">Email</string>
     <string name="title_profile">Profile</string>
     <string name="infoString">Biograghy Info</string>
@@ -26,5 +26,29 @@
     <string name="bio_hint">Biograghic info</string>
     <string name="phone_hint_post">(11) 4761 1986</string>
     <string name="phone_hint_pre">+20</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="transition_user_list_to_profile">transitionUserListToProfile</string>
+    <string name="transition_user_list_to_profile_picture">transitionUserListToProfilePicture</string>
+    <string name="transition_user_list_to_profile_name">transitionUserListToProfileName</string>
+    <string name="transition_fab_to_edit">transitionFabToEdit</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_create_community">Communities</string>
+    <string name="create">Create</string>
+    <string name="title_communities">Communities</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_communities">My Communities</string>
+    <string name="join">Join</string>
+    <string name="joined">Joined</string>
+    <string name="search_community">Search Communities</string>
+    <string name="title_request_to_join">Join Request</string>
+    <string name="send">Send</string>
+    <string name="comm_name">Community Name</string>
+    <string name="add_community">Add Community</string>
+    <string name="add">Add</string>
+    <string name="info">info</string>
+    <string name="description">Community description</string>
 
 </resources>

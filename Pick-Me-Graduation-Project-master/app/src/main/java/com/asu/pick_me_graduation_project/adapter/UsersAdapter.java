@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 import com.asu.pick_me_graduation_project.R;
 import com.asu.pick_me_graduation_project.model.User;
+import com.asu.pick_me_graduation_project.utils.Constants;
+import com.asu.pick_me_graduation_project.utils.ValidationUtils;
 import com.asu.pick_me_graduation_project.view.CircleTransform;
+import com.github.florent37.materialimageloading.MaterialImageLoading;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 
@@ -44,33 +48,38 @@ public class UsersAdapter extends ArrayAdapter<User>
 
         // reference views
         TextView textViewUsername = (TextView) view.findViewById(R.id.textViewUserName);
-        ImageView imageViewPP = (ImageView) view.findViewById(R.id.imageViewPP);
+        final ImageView imageViewPP = (ImageView) view.findViewById(R.id.imageViewPP);
 
         // set data
         final User user = getItem(position);
-        textViewUsername.setText(user.getFirstName());
-        Picasso.with(getContext()).
-                load(user.getProfilePictureUrl())
-                .transform(new CircleTransform())
-                .into(imageViewPP);
+        textViewUsername.setText(user.getFirstName() + " " + user.getLastName());
+        if (ValidationUtils.notEmpty(user.getProfilePictureUrl()))
+            Picasso.with(getContext()).
+                    load(user.getProfilePictureUrl())
+                    .placeholder(R.drawable.ic_user_small)
+                    .into(imageViewPP);
+
 
         // add listenrs
+        final View finalView = view;
         view.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 if (listener != null)
-                    listener.onClick(user, position);
+                    listener.onClick(user, position, finalView);
             }
         });
 
         return view;
     }
 
+
+
     public interface Listener
     {
-        public void onClick(User user, int position);
+        public void onClick(User user, int position, View v);
 
     }
 }
